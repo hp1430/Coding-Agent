@@ -126,3 +126,11 @@ TOOLS_MENU = [
     list_directory_schema,
     execute_command_schema,
 ]
+
+def tool_catalog() -> list[dict[str, str]]:
+    return [
+        {
+            "name": schema["function"]["name"],
+            "description": schema["function"]["description"]
+        } for schema in TOOLS_MENU
+    ]
